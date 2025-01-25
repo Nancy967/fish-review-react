@@ -22,7 +22,23 @@ export const commentPostAPI = async (
 
 export const commentGetAPI = async (symbol: string) => {
   try {
-    const data = await axios.get<CommentGet[]>(api + `?Symbol=${symbol}`);
+    // const data = await axios.get<CommentGet[]>(api + `?Symbol=${symbol}`);
+    const data = {
+      data: [
+        {
+          title: "Great Post!",
+          content:
+            "I really enjoyed reading your post about the new tech trends. Very insightful and well-researched.",
+          createdBy: "User123",
+        },
+        {
+          title: "Interesting Insights",
+          content:
+            "Your analysis of the market dynamics was spot on. Looking forward to reading more posts like this.",
+          createdBy: "User456",
+        },
+      ],
+    };
     return data;
   } catch (error) {
     handleError(error);
