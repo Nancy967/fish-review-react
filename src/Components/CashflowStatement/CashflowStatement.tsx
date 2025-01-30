@@ -30,26 +30,6 @@ const config = [
         company.netCashUsedProvidedByFinancingActivities
       ),
   },
-  {
-    label: "Cash At End of Period",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.cashAtEndOfPeriod),
-  },
-  {
-    label: "CapEX",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.capitalExpenditure),
-  },
-  {
-    label: "Issuance Of Stock",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.commonStockIssued),
-  },
-  {
-    label: "Free Cash Flow",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.freeCashFlow),
-  },
 ];
 
 const CashflowStatement = (props: Props) => {

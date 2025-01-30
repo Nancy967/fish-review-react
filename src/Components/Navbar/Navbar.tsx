@@ -19,6 +19,9 @@ const Navbar = (props: Props) => {
             <Link to="/search" className="text-black hover:text-darkBlue">
               Search
             </Link>
+            <Link to="/design-guide" className="text-black hover:text-darkBlue ml-2">
+              design-guide
+            </Link>
           </div>
         </div>
         {isLoggedIn() ? (
