@@ -8,40 +8,11 @@ export interface CompanySearch {
 
 export interface CompanyProfile {
   symbol: string;
-  price: number;
-  beta: number;
-  volAvg: number;
-  mktCap: number;
-  lastDiv: number;
-  range: string;
-  changes: number;
-  companyName: string;
-  currency: string;
-  cik: string;
-  isin: string;
-  exchange: string;
-  exchangeShortName: string;
-  industry: string;
-  website: string;
+  category: string;
+  commonName: string;
   description: string;
-  ceo: string;
-  sector: string;
-  counter: string;
-  fullTimeEmployees: string;
-  phone: string;
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
-  dcfDiff: number;
-  dcf: number;
-  image: string;
-  ipoDate: string;
-  defaultImage: boolean;
-  isEtf: boolean;
-  isActivelyTrading: boolean;
-  isAdr: boolean;
-  isFund: boolean;
+  size: string;
+  lifespan: string;
 }
 
 export interface CompanyKeyRatios {
@@ -147,60 +118,17 @@ export interface CompanyIncomeStatement {
 }
 
 export interface CompanyBalanceSheet {
-  date: string;
   symbol: string;
-  reportedCurrency: string;
-  cik: string;
-  fillingDate: string;
-  acceptedDate: string;
-  calendarYear: string;
-  period: string;
-  cashAndCashEquivalents: number;
-  shortTermInvestments: number;
-  cashAndShortTermInvestments: number;
-  netReceivables: number;
-  inventory: number;
-  otherCurrentAssets: number;
-  totalCurrentAssets: number;
-  propertyPlantEquipmentNet: number;
-  goodwill: number;
-  intangibleAssets: number;
-  goodwillAndIntangibleAssets: number;
-  longTermInvestments: number;
-  taxAssets: number;
-  otherNonCurrentAssets: number;
-  totalNonCurrentAssets: number;
-  otherAssets: number;
-  totalAssets: number;
-  accountPayables: number;
-  shortTermDebt: number;
-  taxPayables: number;
-  deferredRevenue: number;
-  otherCurrentLiabilities: number;
-  totalCurrentLiabilities: number;
-  longTermDebt: number;
-  deferredRevenueNonCurrent: number;
-  deferredTaxLiabilitiesNonCurrent: number;
-  otherNonCurrentLiabilities: number;
-  totalNonCurrentLiabilities: number;
-  otherLiabilities: number;
-  capitalLeaseObligations: number;
-  totalLiabilities: number;
-  preferredStock: number;
-  commonStock: number;
-  retainedEarnings: number;
-  accumulatedOtherComprehensiveIncomeLoss: number;
-  othertotalStockholdersEquity: number;
-  totalStockholdersEquity: number;
-  totalEquity: number;
-  totalLiabilitiesAndStockholdersEquity: number;
-  minorityInterest: number;
-  totalLiabilitiesAndTotalEquity: number;
-  totalInvestments: number;
-  totalDebt: number;
-  netDebt: number;
-  link: string;
-  finalLink: string;
+  ph: string;
+  salinity: string;
+  temperature: string;
+  ammonia: string;
+  nitrite: string;
+  nitrate: string;
+  hardness: string;
+  tankSize: string;
+  diet: string;
+  compatibility: string;
 }
 
 export interface CompanyCashFlow {

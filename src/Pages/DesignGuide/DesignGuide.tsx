@@ -3,8 +3,8 @@ import Table from "../../Components/Table/Table";
 import RatioList from "../../Components/RatioList/RatioList";
 import { TestDataCompany } from "../../Components/Table/testData";
 import { CompanyKeyMetrics } from "../../company";
-import CashflowStatement from "../../Components/CashflowStatement/CashflowStatement";
 import HistoricalDividend from "../../Components/HistoricalDividend/HistoricalDividend";
+import CashflowStatement from "../../Components/CashflowStatement/CashflowStatement";
 
 type Props = {};
 
@@ -20,8 +20,8 @@ const tableConfig = [
 const DesignGuide = (props: Props) => {
   return (
     <>
-      <CashflowStatement />
       <HistoricalDividend />
+      <CashflowStatement />
     </>
   );
 };

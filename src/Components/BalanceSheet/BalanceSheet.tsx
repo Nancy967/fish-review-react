@@ -14,69 +14,46 @@ type Props = {};
 
 const config = [
   {
-    label: <div className="font-bold">Total Assets</div>,
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.totalAssets),
+    label: <div className="font-bold">pH</div>,
+    render: (company: CompanyBalanceSheet) => company.ph,
+    //   formatLargeMonetaryNumber(company.ph),
+    subTitle: "水的酸鹼度",
   },
   {
-    label: "Current Assets",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.totalCurrentAssets),
+    label: "Salinity",
+    render: (company: CompanyBalanceSheet) => company.salinity,
   },
   {
-    label: "Total Cash",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.cashAndCashEquivalents),
+    label: "Temperature",
+    render: (company: CompanyBalanceSheet) => company.temperature,
   },
   {
-    label: "Property & equipment",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.propertyPlantEquipmentNet),
+    label: "Ammonia",
+    render: (company: CompanyBalanceSheet) => company.ammonia,
   },
   {
-    label: "Intangible Assets",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.intangibleAssets),
+    label: "Nitrite",
+    render: (company: CompanyBalanceSheet) => company.nitrite,
   },
   {
-    label: "Long Term Debt",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.longTermDebt),
+    label: "Nitrate",
+    render: (company: CompanyBalanceSheet) => company.nitrate,
   },
   {
-    label: "Total Debt",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.otherCurrentLiabilities),
+    label: "Hardness",
+    render: (company: CompanyBalanceSheet) => company.hardness,
   },
   {
-    label: <div className="font-bold">Total Liabilites</div>,
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.totalLiabilities),
+    label: <div className="font-bold">Tank Size</div>,
+    render: (company: CompanyBalanceSheet) => company.tankSize,
   },
   {
-    label: "Current Liabilities",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.totalCurrentLiabilities),
+    label: "Diet",
+    render: (company: CompanyBalanceSheet) => company.diet,
   },
   {
-    label: "Long-Term Debt",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.longTermDebt),
-  },
-  {
-    label: "Long-Term Income Taxes",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.otherLiabilities),
-  },
-  {
-    label: "Stakeholder's Equity",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.totalStockholdersEquity),
-  },
-  {
-    label: "Retained Earnings",
-    render: (company: CompanyBalanceSheet) =>
-      formatLargeMonetaryNumber(company.retainedEarnings),
+    label: "Compatibility",
+    render: (company: CompanyBalanceSheet) => company.compatibility,
   },
 ];
 

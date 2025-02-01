@@ -26,15 +26,15 @@ export const commentGetAPI = async (symbol: string) => {
     const data = {
       data: [
         {
-          title: "Great Post!",
+          title: "活潑有趣的水族箱明星",
           content:
-            "I really enjoyed reading your post about the new tech trends. Very insightful and well-researched.",
+            "公子小丑魚以其鮮艷的顏色和活潑的性格成為水族箱中的焦點。牠們的社交性很強，總是會與其他魚類互動，特別是與海葵共生的模樣，讓人感到非常有趣。對於新手來說，這是很好的選擇，因為牠們的照護需求相對簡單，只要保持穩定的水質和適當的餵食，就能看到牠們快樂地生活。",
           createdBy: "User123",
         },
         {
-          title: "Interesting Insights",
+          title: "與海葵共生的美麗小魚",
           content:
-            "Your analysis of the market dynamics was spot on. Looking forward to reading more posts like this.",
+            "公子小丑魚和海葵之間的共生關係真的是大自然中的奇蹟。小丑魚不僅能在海葵的觸手間安全庇護，還能幫助海葵清潔。這種關係讓小丑魚更顯得獨特。儘管牠們相對不需要太複雜的照護，但為了提供牠們一個舒適的環境，建議提供一個適合的小型海葵或岩石隱蔽處，讓牠們感到更安心。",
           createdBy: "User456",
         },
       ],
