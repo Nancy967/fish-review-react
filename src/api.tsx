@@ -24,18 +24,18 @@ export const searchCompanies = async (query: string) => {
     const data = {
       data: [
         {
-          currency: "USD",
-          exchangeShortName: "NASDAQ",
-          name: "Apple Inc.",
-          stockExchange: "NASDAQ Stock Market",
-          symbol: "AAPL",
+          symbol: "09",
+          category: "雀鯛",
+          commonName: "公子小丑",
+          size: "7-10公分",
+          lifespan: "6~10年",
         },
         {
-          currency: "USD",
-          exchangeShortName: "NYSE",
-          name: "The Coca-Cola Company",
-          stockExchange: "New York Stock Exchange",
-          symbol: "KO",
+          symbol: "10",
+          category: "雀鯛",
+          commonName: "透紅小丑",
+          size: "6-10公分",
+          lifespan: "6~10年",
         },
       ],
     };

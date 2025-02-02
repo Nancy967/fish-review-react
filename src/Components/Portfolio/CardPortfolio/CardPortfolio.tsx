@@ -15,7 +15,7 @@ const CardPortfolio = ({ portfolioValue, onPortfolioDelete }: Props) => {
         to={`/company/${portfolioValue.symbol}/company-profile`}
         className="pt-6 text-xl font-bold"
       >
-        {portfolioValue.symbol}
+        {portfolioValue.commonName}
       </Link>
       <DeletePortfolio
         portfolioValue={portfolioValue.symbol}

@@ -12,6 +12,7 @@ import {
   portfolioGetAPI,
 } from "../../Services/PortfolioService";
 import { toast } from "react-toastify";
+import SearchDropdown from "../../Components/SearchDropdown/SearchDropdown";
 
 interface Props {}
 
@@ -27,9 +28,11 @@ const SearchPage = (props: Props) => {
     getPortfolio();
   }, []);
 
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSearch(e.target.value);
   };
+
+  const categoryList = ["龍", "神仙", "倒吊", "狐狸", "蝦虎", "雀鯛", "其他"];
 
   const getPortfolio = () => {
     portfolioGetAPI()
@@ -79,10 +82,16 @@ const SearchPage = (props: Props) => {
   };
   return (
     <>
-      <Search
+      {/* <Search
         onSearchSubmit={onSearchSubmit}
         search={search}
         handleSearchChange={handleSearchChange}
+      /> */}
+      <SearchDropdown
+        onSearchSubmit={onSearchSubmit}
+        search={search}
+        handleSearchChange={handleSearchChange}
+        categoryList={categoryList}
       />
       <ListPortfolio
         portfolioValues={portfolioValues!}
