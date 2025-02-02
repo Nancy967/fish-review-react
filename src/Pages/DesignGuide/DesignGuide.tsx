@@ -3,8 +3,8 @@ import Table from "../../Components/Table/Table";
 import RatioList from "../../Components/RatioList/RatioList";
 import { TestDataCompany } from "../../Components/Table/testData";
 import { CompanyKeyMetrics } from "../../company";
-import HistoricalDividend from "../../Components/HistoricalDividend/HistoricalDividend";
 import CashflowStatement from "../../Components/CashflowStatement/CashflowStatement";
+import CustomContentOfTooltip from "../../Components/CustomContentOfTooltip/CustomContentOfTooltip";
 
 type Props = {};
 
@@ -20,7 +20,7 @@ const tableConfig = [
 const DesignGuide = (props: Props) => {
   return (
     <>
-      <HistoricalDividend />
+      <CustomContentOfTooltip />
       <CashflowStatement />
     </>
   );
