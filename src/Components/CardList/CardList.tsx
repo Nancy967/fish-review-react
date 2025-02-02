@@ -1,10 +1,10 @@
 import React, { SyntheticEvent } from "react";
 import Card from "../Card/Card";
-import { CompanySearch } from "../../company";
+import { FishSearch } from "../../fish";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  searchResults: CompanySearch[];
+  searchResults: FishSearch[];
   onPortfolioCreate: (e: SyntheticEvent) => void;
 }
 
@@ -18,7 +18,7 @@ const CardList: React.FC<Props> = ({
         searchResults.map((result) => {
           return (
             <Card
-              id={result.symbol}
+              id={result.scientificName}
               key={uuidv4()}
               searchResult={result}
               onPortfolioCreate={onPortfolioCreate}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CompanyBalanceSheet } from "../../company";
+import { FishCareSheet } from "../../fish";
 import { useOutletContext } from "react-router-dom";
 import RatioList from "../RatioList/RatioList";
 import { getBalanceSheet } from "../../api";
@@ -15,51 +15,51 @@ type Props = {};
 const config = [
   {
     label: <div className="font-bold">pH</div>,
-    render: (company: CompanyBalanceSheet) => company.ph,
+    render: (company: FishCareSheet) => company.ph,
     //   formatLargeMonetaryNumber(company.ph),
     subTitle: "水的酸鹼度",
   },
   {
     label: "Salinity",
-    render: (company: CompanyBalanceSheet) => company.salinity,
+    render: (company: FishCareSheet) => company.salinity,
   },
   {
     label: "Temperature",
-    render: (company: CompanyBalanceSheet) => company.temperature,
+    render: (company: FishCareSheet) => company.temperature,
   },
   {
     label: "Ammonia",
-    render: (company: CompanyBalanceSheet) => company.ammonia,
+    render: (company: FishCareSheet) => company.ammonia,
   },
   {
     label: "Nitrite",
-    render: (company: CompanyBalanceSheet) => company.nitrite,
+    render: (company: FishCareSheet) => company.nitrite,
   },
   {
     label: "Nitrate",
-    render: (company: CompanyBalanceSheet) => company.nitrate,
+    render: (company: FishCareSheet) => company.nitrate,
   },
   {
     label: "Hardness",
-    render: (company: CompanyBalanceSheet) => company.hardness,
+    render: (company: FishCareSheet) => company.hardness,
   },
   {
     label: <div className="font-bold">Tank Size</div>,
-    render: (company: CompanyBalanceSheet) => company.tankSize,
+    render: (company: FishCareSheet) => company.tankSize,
   },
   {
     label: "Diet",
-    render: (company: CompanyBalanceSheet) => company.diet,
+    render: (company: FishCareSheet) => company.diet,
   },
   {
     label: "Compatibility",
-    render: (company: CompanyBalanceSheet) => company.compatibility,
+    render: (company: FishCareSheet) => company.compatibility,
   },
 ];
 
 const BalanceSheet = (props: Props) => {
   const ticker = useOutletContext<string>();
-  const [companyData, setCompanyData] = useState<CompanyBalanceSheet>();
+  const [companyData, setCompanyData] = useState<FishCareSheet>();
   useEffect(() => {
     const getCompanyData = async () => {
       const value = await getBalanceSheet(ticker!);

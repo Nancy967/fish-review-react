@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CompanyTenK } from "../../company";
+import { CompanyTenK } from "../../fish";
 import { getTenK } from "../../api";
 import TenKFinderItem from "./TenKFinderItem/TenKFinderItem";
 import Spinner from "../Spinners/Spinner";

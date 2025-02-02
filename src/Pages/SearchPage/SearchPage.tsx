@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, SyntheticEvent, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import { CompanySearch } from "../../company";
-import { searchCompanies } from "../../api";
+import { FishSearch } from "../../fish";
+import { searchFishes } from "../../api";
 import Search from "../../Components/Search/Search";
 import ListPortfolio from "../../Components/Portfolio/ListPortfolio/ListPortfolio";
 import CardList from "../../Components/CardList/CardList";
@@ -21,7 +21,7 @@ const SearchPage = (props: Props) => {
   const [portfolioValues, setPortfolioValues] = useState<PortfolioGet[] | null>(
     []
   );
-  const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
+  const [searchResult, setSearchResult] = useState<FishSearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const SearchPage = (props: Props) => {
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    const result = await searchCompanies(search);
+    const result = await searchFishes(search);
     //setServerError(result.data);
     if (typeof result === "string") {
       setServerError(result);

@@ -1,14 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import HomePage from "../Pages/HomePage/HomePage";
-import CompanyPage from "../Pages/CompanyPage/CompanyPage";
+import FishPage from "../Pages/CompanyPage/CompanyPage";
 import SearchPage from "../Pages/SearchPage/SearchPage";
-import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
-import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
+import FishReviews from "../Components/FishReviews/FishReviews";
 import DesignGuide from "../Pages/DesignGuide/DesignGuide";
-import BalanceSheet from "../Components/BalanceSheet/BalanceSheet";
-import HistoricalDividend from "../Components/HistoricalDividend/HistoricalDividend";
-import CashflowStatement from "../Components/CashflowStatement/CashflowStatement";
+import CareSheet from "../Components/CareSheet/CareSheet";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
@@ -31,15 +28,15 @@ export const router = createBrowserRouter([
       },
       { path: "design-guide", element: <DesignGuide /> },
       {
-        path: "company/:ticker",
+        path: "fish/:ticker",
         element: (
           <ProtectedRoute>
-            <CompanyPage />
+            <FishPage />
           </ProtectedRoute>
         ),
         children: [
-          { path: "company-profile", element: <CompanyProfile /> },
-          { path: "balance-sheet", element: <BalanceSheet /> },
+          { path: "fish-profile", element: <FishReviews /> },
+          { path: "care-sheet", element: <CareSheet /> },
         ],
       },
     ],

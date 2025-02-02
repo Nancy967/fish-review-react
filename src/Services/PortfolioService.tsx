@@ -29,12 +29,12 @@ export const portfolioGetAPI = async () => {
       data: [
         {
           id: 9,
-          symbol: "09",
+          scientificName: "amphiprion-percula",
           commonName: "公子小丑",
         },
         {
           id: 10,
-          symbol: "10",
+          scientificName: "amphiprion-frenatus",
           commonName: "透紅小丑",
         },
       ],

@@ -2,8 +2,7 @@ import React from "react";
 import Table from "../../Components/Table/Table";
 import RatioList from "../../Components/RatioList/RatioList";
 import { TestDataCompany } from "../../Components/Table/testData";
-import { CompanyKeyMetrics } from "../../company";
-import CashflowStatement from "../../Components/CashflowStatement/CashflowStatement";
+import CashflowStatement from "../../Components/GuideTable/GuideTable";
 import CustomContentOfTooltip from "../../Components/CustomContentOfTooltip/CustomContentOfTooltip";
 
 type Props = {};

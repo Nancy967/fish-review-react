@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CompanyProfile } from "../../company";
+import { FishProfile } from "../../fish";
 import { Link, useParams } from "react-router-dom";
 import { getCompanyProfile } from "../../api";
 import Sidebar from "../../Components/Sidebar/Sidebar";
@@ -14,7 +14,7 @@ interface Props {}
 const CompanyPage = (props: Props) => {
   let { ticker } = useParams();
 
-  const [company, setCompany] = useState<CompanyProfile>();
+  const [company, setCompany] = useState<FishProfile>();
 
   useEffect(() => {
     const getProfileInit = async () => {

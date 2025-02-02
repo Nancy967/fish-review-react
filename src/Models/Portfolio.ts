@@ -1,9 +1,9 @@
 export type PortfolioGet = {
-  id: number,
-  symbol:string,
-  commonName:string
+  id: number;
+  scientificName: string;
+  commonName: string;
 };
 
 export type PortfolioPost = {
-  symbol: string;
+  scientificName: string;
 };
