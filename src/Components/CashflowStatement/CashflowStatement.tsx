@@ -10,25 +10,20 @@ type Props = {};
 
 const config = [
   {
-    label: "Date",
-    render: (company: CompanyCashFlow) => company.date,
+    label: "Category",
+    render: (company: CompanyCashFlow) => company.category,
   },
   {
-    label: "Operating Cashflow",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.operatingCashFlow),
+    label: "Commom Name",
+    render: (company: CompanyCashFlow) => company.commonName,
   },
   {
-    label: "Investing Cashflow",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(company.netCashUsedForInvestingActivites),
+    label: "Size",
+    render: (company: CompanyCashFlow) => company.size,
   },
   {
-    label: "Financing Cashflow",
-    render: (company: CompanyCashFlow) =>
-      formatLargeMonetaryNumber(
-        company.netCashUsedProvidedByFinancingActivities
-      ),
+    label: "Lifespan",
+    render: (company: CompanyCashFlow) => company.lifespan,
   },
 ];
 

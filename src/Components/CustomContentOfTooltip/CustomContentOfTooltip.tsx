@@ -24,7 +24,7 @@ const data = [
     review: 325,
   },
   {
-    name: "Surgeonfish / Tang",
+    name: "Tang",
     review: 1462,
   },
   {
@@ -52,7 +52,7 @@ const getIntroOfPage = (label: any) => {
   if (label === "Angelfish") {
     return "神仙";
   }
-  if (label === "Surgeonfish / Tang") {
+  if (label === "Tang") {
     return "倒吊";
   }
   if (label === "Foxface Rabbitfish") {
