@@ -35,9 +35,14 @@ export interface FishGuideTable {
   lifespan: string;
 }
 
-export interface CompanyCompData {
-  symbol: string;
-  peersList: string[];
+export interface FishRelevantData {
+  scientificName: string;
+  peersList: PeersList[];
+}
+
+export interface PeersList {
+  commonName: string;
+  scientificName: string;
 }
 
 export interface CompanyTenK {

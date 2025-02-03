@@ -2,7 +2,7 @@ import axios from "axios";
 import {
   FishCareSheet,
   FishGuideTable,
-  CompanyCompData,
+  FishRelevantData,
   FishProfile,
   FishSearch,
   CompanyTenK,
@@ -187,7 +187,7 @@ export const getGuideTable = async (query: string) => {
   }
 };
 
-export const getCompData = async (query: string) => {
+export const getRelevantData = async (query: string) => {
   try {
     // const data = await axios.get<CompanyCompData[]>(
     //   `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${process.env.REACT_APP_API_KEY}`
@@ -195,12 +195,29 @@ export const getCompData = async (query: string) => {
     const data = {
       data: [
         {
-          symbol: "AAPL",
-          peersList: ["MSFT", "GOOGL", "AMZN", "META", "NFLX"],
-        },
-        {
-          symbol: "TSLA",
-          peersList: ["F", "GM", "RIVN", "LCID", "NIO"],
+          scientificName: "amphiprion-percula",
+          peersList: [
+            {
+                commonName: "透紅小丑",
+                scientificName: "amphiprion-frenatus",
+            },
+            {
+                commonName: "咖啡小丑",
+                scientificName: "amphiprion-melanopus",
+            },
+            {
+                commonName: "紅小丑",
+                scientificName: "amphiprion-ephippium",
+            },
+            {
+                commonName: "黑公子",
+                scientificName: "amphiprion-ocellaris",
+            },
+            {
+                commonName: "雙帶小丑",
+                scientificName: "amphiprion-clarkii",
+            }
+          ],
         },
       ],
     };
