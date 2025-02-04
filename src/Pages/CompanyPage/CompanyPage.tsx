@@ -35,7 +35,7 @@ const CompanyPage = (props: Props) => {
             <Tile title="Size" subTitle={company.size} />
             <Tile title="Lifespan" subTitle={company.lifespan} />
             <CompFinder ticker={company.scientificName} />
-            {/* <TenKFinder ticker={company.symbol} /> */}
+            <TenKFinder ticker={company.scientificName} />
             <p className="bg-white shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
               {company.description}
             </p>

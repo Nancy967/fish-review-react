@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { CompanyTenK } from "../../fish";
-import { getTenK } from "../../api";
+import { FishExternalLink } from "../../fish";
+import { getExternalLink } from "../../api";
 import TenKFinderItem from "./TenKFinderItem/TenKFinderItem";
 import Spinner from "../Spinners/Spinner";
 
@@ -9,10 +9,10 @@ type Props = {
 };
 
 const TenKFinder = ({ ticker }: Props) => {
-  const [companyData, setCompanyData] = useState<CompanyTenK[]>();
+  const [companyData, setCompanyData] = useState<FishExternalLink[]>();
   useEffect(() => {
     const getTenKData = async () => {
-      const value = await getTenK(ticker);
+      const value = await getExternalLink(ticker);
       setCompanyData(value?.data);
     };
     getTenKData();

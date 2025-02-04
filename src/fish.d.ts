@@ -45,12 +45,8 @@ export interface PeersList {
   scientificName: string;
 }
 
-export interface CompanyTenK {
-  symbol: string;
-  fillingDate: string;
-  acceptedDate: string;
-  cik: string;
-  type: string;
+export interface FishExternalLink {
+  scientificName: string;
+  title?: string;
   link: string;
-  finalLink: string;
 }

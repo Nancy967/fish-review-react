@@ -5,7 +5,7 @@ import {
   FishRelevantData,
   FishProfile,
   FishSearch,
-  CompanyTenK,
+  FishExternalLink,
 } from "./fish";
 
 export interface SearchResponse {
@@ -227,7 +227,7 @@ export const getRelevantData = async (query: string) => {
   }
 };
 
-export const getTenK = async (query: string) => {
+export const getExternalLink = async (query: string) => {
   try {
     // const data = await axios.get<CompanyTenK[]>(
     //   `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-K&page=0&apikey=${process.env.REACT_APP_API_KEY}`
@@ -235,24 +235,14 @@ export const getTenK = async (query: string) => {
     const data = {
       data: [
         {
-          symbol: "AAPL",
-          fillingDate: "2023-10-30",
-          acceptedDate: "2023-10-29",
-          cik: "0000320193",
-          type: "10-K",
-          link: "https://www.sec.gov/Archives/edgar/data/320193/000032019324000010/index.html",
-          finalLink:
-            "https://www.sec.gov/Archives/edgar/data/320193/000032019324000010/10-k.html",
+          scientificName: "amphiprion-percula",
+          title: "可愛尼莫----公子小丑",
+          link: "https://kmweb.moa.gov.tw/subject/subject.php?id=14955",
         },
         {
-          symbol: "TSLA",
-          fillingDate: "2023-12-31",
-          acceptedDate: "2023-12-30",
-          cik: "0001318605",
-          type: "10-K",
-          link: "https://www.sec.gov/Archives/edgar/data/1318605/000131860524000012/index.html",
-          finalLink:
-            "https://www.sec.gov/Archives/edgar/data/1318605/000131860524000012/10-k.html",
+          scientificName: "amphiprion-percula",
+        //   title: "可愛尼莫----公子小丑",
+          link: "https://fishdb.sinica.edu.tw/chi/species.php?id=389_015",
         },
       ],
     };
