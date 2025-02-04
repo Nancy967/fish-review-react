@@ -1,19 +1,19 @@
 import React, { SyntheticEvent } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import { FishSearch } from "../../fish";
-import AddPortfolio from "../Portfolio/AddPortfolio/AddPortfolio";
+import { FishSearchResult } from "../../fish";
+import AddCollection from "../Collection/AddCollection/AddCollection";
 
 interface Props {
   id: string;
-  searchResult: FishSearch;
-  onPortfolioCreate: (e: SyntheticEvent) => void;
+  searchResult: FishSearchResult;
+  onCollectionCreate: (e: SyntheticEvent) => void;
 }
 
 const Card: React.FC<Props> = ({
   id,
   searchResult,
-  onPortfolioCreate,
+  onCollectionCreate,
 }: Props): JSX.Element => {
   return (
     <div
@@ -22,15 +22,15 @@ const Card: React.FC<Props> = ({
       id={id}
     >
       <Link
-        to={`/fish/${searchResult.scientificName}/fish-profile`}
+        to={`/fish/${searchResult.scientificName}/fish-info`}
         className="font-bold text-center text-veryDarkViolet md:text-left"
       >
         {searchResult.commonName} ({searchResult.scientificName})
       </Link>
       <p className="text-veryDarkBlue">{searchResult.category}</p>
-      <AddPortfolio
-        onPortfolioCreate={onPortfolioCreate}
-        symbol={searchResult.scientificName}
+      <AddCollection
+        onCollectionCreate={onCollectionCreate}
+        scientificName={searchResult.scientificName}
       />
     </div>
   );

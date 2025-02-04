@@ -1,16 +1,16 @@
 import React, { useState, ChangeEvent, SyntheticEvent, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import { FishSearch } from "../../fish";
-import { searchFishes } from "../../api";
+import { FishSearchResult } from "../../fish";
+import { fetchFishSearchResults } from "../../api";
 import Search from "../../Components/Search/Search";
-import ListPortfolio from "../../Components/Portfolio/ListPortfolio/ListPortfolio";
+import ListCollection from "../../Components/Collection/ListCollection/ListCollection";
 import CardList from "../../Components/CardList/CardList";
-import { PortfolioGet } from "../../Models/Portfolio";
+import { CollectionGet } from "../../Models/Collection";
 import {
-  portfolioAddAPI,
-  portfolioDeleteAPI,
-  portfolioGetAPI,
-} from "../../Services/PortfolioService";
+  collectionAddAPI,
+  collectionDeleteAPI,
+  collectionGetAPI,
+} from "../../Services/CollectionService";
 import { toast } from "react-toastify";
 import SearchDropdown from "../../Components/SearchDropdown/SearchDropdown";
 
@@ -18,14 +18,14 @@ interface Props {}
 
 const SearchPage = (props: Props) => {
   const [search, setSearch] = useState<string>("");
-  const [portfolioValues, setPortfolioValues] = useState<PortfolioGet[] | null>(
+  const [collectionValues, setCollectionValues] = useState<CollectionGet[] | null>(
     []
   );
-  const [searchResult, setSearchResult] = useState<FishSearch[]>([]);
+  const [searchResult, setSearchResult] = useState<FishSearchResult[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
   useEffect(() => {
-    getPortfolio();
+    getCollection();
   }, []);
 
   const handleSearchChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -34,45 +34,45 @@ const SearchPage = (props: Props) => {
 
   const categoryList = ["龍", "神仙", "倒吊", "狐狸", "蝦虎", "雀鯛", "其他"];
 
-  const getPortfolio = () => {
-    portfolioGetAPI()
+  const getCollection = () => {
+    collectionGetAPI()
       .then((res) => {
         if (res?.data) {
-          setPortfolioValues(res?.data);
+          setCollectionValues(res?.data);
         }
       })
       .catch((e) => {
-        setPortfolioValues(null);
+        setCollectionValues(null);
       });
   };
 
-  const onPortfolioCreate = (e: any) => {
+  const onCollectionCreate = (e: any) => {
     e.preventDefault();
-    portfolioAddAPI(e.target[0].value)
+    collectionAddAPI(e.target[0].value)
       .then((res) => {
         if (res?.status === 204) {
-          toast.success("Stock added to portfolio!");
-          getPortfolio();
+          toast.success("Stock added to collection!");
+          getCollection();
         }
       })
       .catch((e) => {
-        toast.warning("Could not add stock to portfolio!");
+        toast.warning("Could not add stock to collection!");
       });
   };
 
-  const onPortfolioDelete = (e: any) => {
+  const onCollectionDelete = (e: any) => {
     e.preventDefault();
-    portfolioDeleteAPI(e.target[0].value).then((res) => {
+    collectionDeleteAPI(e.target[0].value).then((res) => {
       if (res?.status == 200) {
-        toast.success("Stock deleted from portfolio!");
-        getPortfolio();
+        toast.success("Stock deleted from collection!");
+        getCollection();
       }
     });
   };
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    const result = await searchFishes(search);
+    const result = await fetchFishSearchResults(search);
     //setServerError(result.data);
     if (typeof result === "string") {
       setServerError(result);
@@ -93,13 +93,13 @@ const SearchPage = (props: Props) => {
         handleSearchChange={handleSearchChange}
         categoryList={categoryList}
       />
-      <ListPortfolio
-        portfolioValues={portfolioValues!}
-        onPortfolioDelete={onPortfolioDelete}
+      <ListCollection
+        collectionValues={collectionValues!}
+        onCollectionDelete={onCollectionDelete}
       />
       <CardList
         searchResults={searchResult}
-        onPortfolioCreate={onPortfolioCreate}
+        onCollectionCreate={onCollectionCreate}
       />
       {serverError && <div>Unable to connect to API</div>}
     </>

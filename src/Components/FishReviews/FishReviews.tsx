@@ -1,13 +1,13 @@
 import { useOutletContext } from "react-router-dom";
-import StockComment from "../StockComment/StockComment";
+import FishReview from "../FishReview/FishReview";
 
 type Props = {};
 
 const FishReviews = (props: Props) => {
-  const ticker = useOutletContext<string>();
+  const scientificName = useOutletContext<string>();
   return (
     <>
-      <StockComment stockSymbol={ticker} />
+      <FishReview scientificName={scientificName} />
     </>
   );
 };

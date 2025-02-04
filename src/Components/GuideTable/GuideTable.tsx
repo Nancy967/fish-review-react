@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import { FishGuideTable } from "../../fish";
-import { getGuideTable } from "../../api";
+import { FishOverview } from "../../fish";
+import { fetchFishOverview } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinners/Spinner";
 
@@ -10,28 +10,28 @@ type Props = {};
 const config = [
   {
     label: "Category",
-    render: (fish: FishGuideTable) => fish.category,
+    render: (fish: FishOverview) => fish.category,
   },
   {
     label: "Commom Name",
-    render: (fish: FishGuideTable) => fish.commonName,
+    render: (fish: FishOverview) => fish.commonName,
   },
   {
     label: "Size",
-    render: (fish: FishGuideTable) => fish.size,
+    render: (fish: FishOverview) => fish.size,
   },
   {
     label: "Lifespan",
-    render: (fish: FishGuideTable) => fish.lifespan,
+    render: (fish: FishOverview) => fish.lifespan,
   },
 ];
 
 const CashflowStatement = (props: Props) => {
-  const ticker = useOutletContext<string>();
-  const [guideTableData, setGuideTableData] = useState<FishGuideTable[]>();
+  const scientificName = useOutletContext<string>();
+  const [guideTableData, setGuideTableData] = useState<FishOverview[]>();
   useEffect(() => {
     const getRatios = async () => {
-      const result = await getGuideTable(ticker);
+      const result = await fetchFishOverview(scientificName);
       setGuideTableData(result!.data);
     };
     getRatios();

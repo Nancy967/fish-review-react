@@ -17,14 +17,14 @@ const Sidebar = (props: Props) => {
               className="flex md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
             >
               <FaHome />
-              <h6 className="ml-3">Fish Profile</h6>
+              <h6 className="ml-3">Fish Info</h6>
             </Link>
             <Link
-              to="care-sheet"
+              to="care-guide"
               className="flex md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
             >
               <FaTableCells />
-              <h6 className="ml-3">Care Sheet</h6>
+              <h6 className="ml-3">Care Guide</h6>
             </Link>
           </div>
         </div>

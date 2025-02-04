@@ -1,16 +1,16 @@
 import React, { SyntheticEvent } from "react";
 import Card from "../Card/Card";
-import { FishSearch } from "../../fish";
+import { FishSearchResult } from "../../fish";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  searchResults: FishSearch[];
-  onPortfolioCreate: (e: SyntheticEvent) => void;
+  searchResults: FishSearchResult[];
+  onCollectionCreate: (e: SyntheticEvent) => void;
 }
 
 const CardList: React.FC<Props> = ({
   searchResults,
-  onPortfolioCreate,
+  onCollectionCreate,
 }: Props): JSX.Element => {
   return (
     <div>
@@ -21,7 +21,7 @@ const CardList: React.FC<Props> = ({
               id={result.scientificName}
               key={uuidv4()}
               searchResult={result}
-              onPortfolioCreate={onPortfolioCreate}
+              onCollectionCreate={onCollectionCreate}
             />
           );
         })

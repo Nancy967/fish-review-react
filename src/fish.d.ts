@@ -1,52 +1,56 @@
-export interface FishSearch {
+export interface FishSearchResult {
   scientificName: string;
   category: string;
   commonName: string;
 }
 
-export interface FishProfile {
+export interface FishInfo {
   scientificName: string;
   category: string;
   commonName: string;
-  description: string;
   size: string;
   lifespan: string;
+  description: string;
 }
 
-export interface FishCareSheet {
+export interface FishCareGuide {
   scientificName: string;
-  ph: string;
-  salinity: string;
-  temperature: string;
-  ammonia: string;
-  nitrite: string;
-  nitrate: string;
-  hardness: string;
-  tankSize: string;
+  optimalPH: string;
+  optimalSalinity: string;
+  optimalTemperature: string;
+  maxAmmonia: string;
+  maxNitrite: string;
+  maxNitrate: string;
+  waterHardness: string;
+  recommendedTankSize: string;
   diet: string;
   compatibility: string;
 }
 
-export interface FishGuideTable {
+export interface FishOverview {
+  scientificName: string;
   category: string;
   commonName: string;
-  scientificName: string;
   size: string;
   lifespan: string;
 }
 
-export interface FishRelevantData {
+export interface RelatedFishData {
   scientificName: string;
-  peersList: PeersList[];
+  relatedSpecies: RelatedFish[];
 }
 
-export interface PeersList {
+export interface RelatedFish {
+  scientificName: string;
   commonName: string;
-  scientificName: string;
 }
 
-export interface FishExternalLink {
+export interface FishResourceLink {
   scientificName: string;
   title?: string;
-  link: string;
+  url: string;
+}
+
+export interface FishSearchResponse {
+  data: FishSearchResult[];
 }
