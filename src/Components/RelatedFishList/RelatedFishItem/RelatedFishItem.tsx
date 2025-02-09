@@ -6,7 +6,7 @@ type Props = {
   relatedFish: RelatedFish;
 };
 
-const CompFinderItem = ({ relatedFish }: Props) => {
+const RelatedFishItem = ({ relatedFish }: Props) => {
   return (
     <Link
       reloadDocument
@@ -19,4 +19,4 @@ const CompFinderItem = ({ relatedFish }: Props) => {
   );
 };
 
-export default CompFinderItem;
+export default RelatedFishItem;

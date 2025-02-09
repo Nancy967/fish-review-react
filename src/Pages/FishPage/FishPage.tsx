@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FishInfo } from "../../fish";
 import { Link, useParams } from "react-router-dom";
-import { fetchFishInfo } from "../../api";
+import { getFishInfo } from "../../api";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import FishDashboard from "../../Components/FishDashboard/FishDashboard";
 import Tile from "../../Components/Tile/Tile";
@@ -18,7 +18,7 @@ const FishPage = (props: Props) => {
 
   useEffect(() => {
     const getProfileInit = async () => {
-      const result = await fetchFishInfo(scientificName!);
+      const result = await getFishInfo(scientificName!);
       setFish(result?.data[0]);
     };
     getProfileInit();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { FishOverview } from "../../fish";
-import { fetchFishOverview } from "../../api";
+import { getFishOverview } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinners/Spinner";
 
@@ -26,12 +26,12 @@ const config = [
   },
 ];
 
-const CashflowStatement = (props: Props) => {
+const FishOverviewTable = (props: Props) => {
   const scientificName = useOutletContext<string>();
   const [guideTableData, setGuideTableData] = useState<FishOverview[]>();
   useEffect(() => {
     const getRatios = async () => {
-      const result = await fetchFishOverview(scientificName);
+      const result = await getFishOverview(scientificName);
       setGuideTableData(result!.data);
     };
     getRatios();
@@ -43,4 +43,4 @@ const CashflowStatement = (props: Props) => {
   );
 };
 
-export default CashflowStatement;
+export default FishOverviewTable;

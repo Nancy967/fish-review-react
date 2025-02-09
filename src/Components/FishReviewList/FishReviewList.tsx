@@ -1,21 +1,21 @@
 import React from "react";
 import { ReviewGet } from "../../Models/Review";
-import StockReviewListItem from "../FishReviewListItem/FishReviewListItem";
+import FishReviewListItem from "../FishReviewListItem/FishReviewListItem";
 
 type Props = {
   reviews: ReviewGet[];
 };
 
-const StockReviewList = ({ reviews }: Props) => {
+const FishReviewList = ({ reviews }: Props) => {
   return (
     <>
       {reviews
         ? reviews.map((Review) => {
-            return <StockReviewListItem Review={Review} />;
+            return <FishReviewListItem Review={Review} />;
           })
         : ""}
     </>
   );
 };
 
-export default StockReviewList;
+export default FishReviewList;

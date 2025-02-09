@@ -1,4 +1,4 @@
-export interface FishSearchResult {
+export interface FishSearch {
   scientificName: string;
   category: string;
   commonName: string;
@@ -35,7 +35,7 @@ export interface FishOverview {
   lifespan: string;
 }
 
-export interface RelatedFishData {
+export interface FishRelatedData {
   scientificName: string;
   relatedSpecies: RelatedFish[];
 }
@@ -49,8 +49,4 @@ export interface FishResourceLink {
   scientificName: string;
   title?: string;
   url: string;
-}
-
-export interface FishSearchResponse {
-  data: FishSearchResult[];
 }

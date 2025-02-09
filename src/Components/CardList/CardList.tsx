@@ -1,10 +1,10 @@
 import React, { SyntheticEvent } from "react";
 import Card from "../Card/Card";
-import { FishSearchResult } from "../../fish";
+import { FishSearch } from "../../fish";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  searchResults: FishSearchResult[];
+  searchResults: FishSearch[];
   onCollectionCreate: (e: SyntheticEvent) => void;
 }
 

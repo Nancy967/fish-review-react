@@ -18,7 +18,7 @@ const validation = Yup.object().shape({
   content: Yup.string().required("Content is required"),
 });
 
-const StockReviewForm = ({ scientificName, handleReview }: Props) => {
+const FishReviewForm = ({ scientificName, handleReview }: Props) => {
   const {
     register,
     handleSubmit,
@@ -56,4 +56,4 @@ const StockReviewForm = ({ scientificName, handleReview }: Props) => {
   );
 };
 
-export default StockReviewForm;
+export default FishReviewForm;

@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, SyntheticEvent, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import { FishSearchResult } from "../../fish";
-import { fetchFishSearchResults } from "../../api";
+import { FishSearch } from "../../fish";
+import { searchFishes } from "../../api";
 import Search from "../../Components/Search/Search";
 import ListCollection from "../../Components/Collection/ListCollection/ListCollection";
 import CardList from "../../Components/CardList/CardList";
@@ -21,7 +21,7 @@ const SearchPage = (props: Props) => {
   const [collectionValues, setCollectionValues] = useState<CollectionGet[] | null>(
     []
   );
-  const [searchResult, setSearchResult] = useState<FishSearchResult[]>([]);
+  const [searchResult, setSearchResult] = useState<FishSearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const SearchPage = (props: Props) => {
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    const result = await fetchFishSearchResults(search);
+    const result = await searchFishes(search);
     //setServerError(result.data);
     if (typeof result === "string") {
       setServerError(result);

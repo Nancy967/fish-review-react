@@ -1,12 +1,12 @@
 import React, { SyntheticEvent } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import { FishSearchResult } from "../../fish";
+import { FishSearch } from "../../fish";
 import AddCollection from "../Collection/AddCollection/AddCollection";
 
 interface Props {
   id: string;
-  searchResult: FishSearchResult;
+  searchResult: FishSearch;
   onCollectionCreate: (e: SyntheticEvent) => void;
 }
 

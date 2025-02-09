@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FishResourceLink } from "../../fish";
-import { fetchFishResourceLinks } from "../../api";
+import { getResourceLinks } from "../../api";
 import ResourceFishLinkItem from "./ResourceFishLinkItem/ResourceFishLinkItem";
 import Spinner from "../Spinners/Spinner";
 
@@ -12,7 +12,7 @@ const ResourceFishLink = ({ scientificName }: Props) => {
   const [fishData, setFishData] = useState<FishResourceLink[]>();
   useEffect(() => {
     const getFishResourceLinks = async () => {
-      const value = await fetchFishResourceLinks(scientificName);
+      const value = await getResourceLinks(scientificName);
       setFishData(value?.data);
     };
     getFishResourceLinks();

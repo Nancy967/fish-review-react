@@ -1,19 +1,22 @@
 import axios from "axios";
 import {
-  FishSearchResult,
+  FishSearch,
   FishInfo,
   FishCareGuide,
   FishOverview,
-  RelatedFishData,
+  FishRelatedData,
   FishResourceLink,
-  FishSearchResponse,
 } from "./fish";
 
-export const fetchFishSearchResults = async (query: string) => {
+const api = "http://localhost:8080/api/fish/";
+
+export interface SearchResponse {
+  data: FishSearch[];
+}
+
+export const searchFishes = async (query: string) => {
   try {
-    // const data = await axios.get<SearchResponse>(
-    //   `https://financialmodelingprep.com/api/v3/search?query=${query}&limit=10&exchange=NASDAQ&apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<SearchResponse>(api + `search?query=${query}&limit=8`);
     const data = {
       data: [
         {
@@ -40,11 +43,9 @@ export const fetchFishSearchResults = async (query: string) => {
   }
 };
 
-export const fetchFishInfo = async (query: string) => {
+export const getFishInfo = async (query: string) => {
   try {
-    // const data = await axios.get<CompanyProfile[]>(
-    //   `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<FishInfo[]>(api + `info/${query}`);
     const data = {
       data: [
         {
@@ -64,11 +65,9 @@ export const fetchFishInfo = async (query: string) => {
   }
 };
 
-export const fetchFishCareGuide = async (query: string) => {
+export const getFishCareGuide = async (query: string) => {
   try {
-    // const data = await axios.get<FishCareSheet[]>(
-    //   `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${query}?limit=20&apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<FishCareGuide[]>(api + `care-guide/${query}`);
     const data = {
       data: [
         {
@@ -92,11 +91,9 @@ export const fetchFishCareGuide = async (query: string) => {
   }
 };
 
-export const fetchFishOverview = async (query: string) => {
+export const getFishOverview = async (query: string) => {
   try {
-    // const data = await axios.get<FishGuide[]>(
-    //   `https://financialmodelingprep.com/api/v3/cash-flow-statement/${query}?limit=100&apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<FishOverview[]>(api + `overview/${query}`);
     const data = {
       data: [
         {
@@ -184,11 +181,9 @@ export const fetchFishOverview = async (query: string) => {
   }
 };
 
-export const fetchRelatedFishes = async (query: string) => {
+export const getRelatedData = async (query: string) => {
   try {
-    // const data = await axios.get<CompanyCompData[]>(
-    //   `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<FishRelatedData[]>(api + `related-fishes?scientificName=${query}&limit=5`);
     const data = {
       data: [
         {
@@ -224,11 +219,9 @@ export const fetchRelatedFishes = async (query: string) => {
   }
 };
 
-export const fetchFishResourceLinks = async (query: string) => {
+export const getResourceLinks = async (query: string) => {
   try {
-    // const data = await axios.get<CompanyTenK[]>(
-    //   `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-K&page=0&apikey=${process.env.REACT_APP_API_KEY}`
-    // );
+    // const data = await axios.get<FishResourceLink[]>(api + `resource-links/${query}`);
     const data = {
       data: [
         {

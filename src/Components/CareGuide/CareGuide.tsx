@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FishCareGuide } from "../../fish";
 import { useOutletContext } from "react-router-dom";
 import RatioList from "../RatioList/RatioList";
-import { fetchFishCareGuide } from "../../api";
+import { getFishCareGuide } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinners/Spinner";
 
@@ -57,7 +57,7 @@ const CareGuide = (props: Props) => {
   const [fishData, setFishData] = useState<FishCareGuide>();
   useEffect(() => {
     const getFishData = async () => {
-      const value = await fetchFishCareGuide(scientificName!);
+      const value = await getFishCareGuide(scientificName!);
       setFishData(value?.data[0]);
     };
     getFishData();
