@@ -32,7 +32,7 @@ const SearchPage = (props: Props) => {
     setSearch(e.target.value);
   };
 
-  const categoryList = ["龍", "神仙", "倒吊", "狐狸", "蝦虎", "雀鯛", "其他"];
+  const categoryList = ["雀鯛"];
 
   const getCollection = () => {
     collectionGetAPI()
@@ -51,12 +51,12 @@ const SearchPage = (props: Props) => {
     collectionAddAPI(e.target[0].value)
       .then((res) => {
         if (res?.status === 204) {
-          toast.success("Stock added to collection!");
+          toast.success("Fish added to collection!");
           getCollection();
         }
       })
       .catch((e) => {
-        toast.warning("Could not add stock to collection!");
+        toast.warning("Could not add fish to collection!");
       });
   };
 
@@ -64,7 +64,7 @@ const SearchPage = (props: Props) => {
     e.preventDefault();
     collectionDeleteAPI(e.target[0].value).then((res) => {
       if (res?.status == 200) {
-        toast.success("Stock deleted from collection!");
+        toast.success("Collection deleted from collection!");
         getCollection();
       }
     });

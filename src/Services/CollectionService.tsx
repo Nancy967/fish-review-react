@@ -2,20 +2,20 @@ import axios from "axios";
 import { CollectionGet, CollectionPost } from "../Models/Collection";
 import { handleError } from "../Helpers/ErrorHandler";
 
-const api = "http://localhost:5167/api/collection/";
+const api = "http://localhost:8080/api/collection/";
 
-export const collectionAddAPI = async (symbol: string) => {
+export const collectionAddAPI = async (scientificName: string) => {
   try {
-    const data = await axios.post<CollectionPost>(api + `?symbol=${symbol}`);
+    const data = await axios.post<CollectionPost>(api + `?scientificName=${scientificName}`);
     return data;
   } catch (error) {
     handleError(error);
   }
 };
 
-export const collectionDeleteAPI = async (symbol: string) => {
+export const collectionDeleteAPI = async (scientificName: string) => {
   try {
-    const data = await axios.delete<CollectionPost>(api + `?symbol=${symbol}`);
+    const data = await axios.delete<CollectionPost>(api + `?scientificName=${scientificName}`);
     return data;
   } catch (error) {
     handleError(error);
@@ -28,15 +28,15 @@ export const collectionGetAPI = async () => {
     const data = {
       data: [
         {
-          id: 9,
+          id: 1,
           scientificName: "amphiprion-percula",
           commonName: "公子小丑",
         },
-        {
-          id: 10,
-          scientificName: "amphiprion-frenatus",
-          commonName: "透紅小丑",
-        },
+        // {
+        //   id: 2,
+        //   scientificName: "amphiprion-frenatus",
+        //   commonName: "透紅小丑",
+        // },
       ],
     };
     return data;

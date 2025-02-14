@@ -13,6 +13,11 @@ const SearchDropdown: React.FC<Props> = ({
   handleSearchChange,
   categoryList,
 }: Props): JSX.Element => {
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    handleSearchChange(e); // 呼叫傳入的 handleSearchChange
+    onSearchSubmit(e); // 當選擇選項時直接觸發提交
+  };
+
   return (
     <section className="relative bg-gray-100">
       <div className="max-w-4xl mx-auto p-6 space-y-6">
@@ -24,21 +29,15 @@ const SearchDropdown: React.FC<Props> = ({
             className="flex-1 p-3 border-2 rounded-lg placeholder-black focus:outline-none"
             id="search-select"
             value={search}
-            onChange={handleSearchChange}
+            onChange={handleChange} //  onChange 觸發提交
           >
             <option value="">請選擇類別</option>
-            {categoryList.map((category:any) => (
+            {categoryList.map((category: any) => (
               <option key={category} value={category}>
                 {category}
               </option>
             ))}
           </select>
-          <button
-            type="submit"
-            className="p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-          >
-            搜尋
-          </button>
         </form>
       </div>
     </section>

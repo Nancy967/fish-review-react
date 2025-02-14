@@ -2,7 +2,7 @@ import axios from "axios";
 import { ReviewGet, ReviewPost } from "../Models/Review";
 import { handleError } from "../Helpers/ErrorHandler";
 
-const api = "http://localhost:5167/api/review/";
+const api = "http://localhost:8080/api/review/";
 
 export const reviewPostAPI = async (
   title: string,

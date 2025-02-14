@@ -19,7 +19,10 @@ const Navbar = (props: Props) => {
             <Link to="/search" className="text-black hover:text-darkBlue">
               Search
             </Link>
-            <Link to="/overview" className="text-black hover:text-darkBlue ml-2">
+            <Link
+              to="/overview"
+              className="text-black hover:text-darkBlue ml-5"
+            >
               Overview
             </Link>
           </div>
@@ -29,7 +32,7 @@ const Navbar = (props: Props) => {
             <div className="hover:text-darkBlue">Welcome, {user?.userName}</div>
             <a
               onClick={logout}
-              className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              className="px-8 py-3 font-bold rounded text-white bg-neonOrange hover:opacity-70"
             >
               Logout
             </a>
@@ -41,7 +44,7 @@ const Navbar = (props: Props) => {
             </Link>
             <Link
               to="/register"
-              className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              className="px-8 py-3 font-bold rounded text-white bg-neonOrange hover:opacity-70"
             >
               Signup
             </Link>

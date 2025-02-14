@@ -24,11 +24,11 @@ export const searchFishes = async (query: string) => {
           category: "雀鯛",
           commonName: "公子小丑",
         },
-        {
-          scientificName: "amphiprion-frenatus",
-          category: "雀鯛",
-          commonName: "透紅小丑",
-        },
+        // {
+        //   scientificName: "amphiprion-frenatus",
+        //   category: "雀鯛",
+        //   commonName: "透紅小丑",
+        // },
       ],
     };
     return data;

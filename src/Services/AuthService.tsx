@@ -2,7 +2,7 @@ import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
 import { UserProfileToken } from "../Models/User";
 
-const api = "http://localhost:5167/api/";
+const api = "http://localhost:8080/api/";
 
 export const loginAPI = async (username: string, password: string) => {
   try {
@@ -12,8 +12,8 @@ export const loginAPI = async (username: string, password: string) => {
     // });
     const data = {
       data: {
-        userName: "john_doe",
-        email: "john.doe@example.com",
+        userName: "nancy_chu",
+        email: "nancy.chu@example.com",
         token: "abcdef1234567890",
       },
     };
@@ -36,8 +36,8 @@ export const registerAPI = async (
     // });
     const data = {
       data: {
-        userName: "john_doe",
-        email: "john.doe@example.com",
+        userName: "nancy_chu",
+        email: "nancy.chu@example.com",
         token: "abcdef1234567890",
       },
     };
